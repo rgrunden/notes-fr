@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notes FR</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  
+  <body>
+    <div class="container">
+      <h1>Notes FR</h1>
+      <p class="subtitle"> Notes that are always there for you. For real.</p>
+
+      <section class="card app">
+        <aside class="sidebar">
+          <div class="button-row">
+            <button id="addBtn" class="btn">Add Note</button>
+            <button id="deleteBtn" class="btn danger">Delete</button>
+            <button id="deleteAllBtn" class="btn danger">Delete All</button>
+            <button id= "exportBtn" class="btn">Export all</button>
+            <button id="exportOneBtn" class="btn">Export 1</button>
+          </div>
+          <div id="notesList">
+           No notes yet. Click Add Note to get started.
+          </div>
+
+          <div id="emptyState" class="empty-state" style="display: none;"> No notes yet. Click Add note to ge started.</div>
+          
+          <ul id="notesList"></ul>
+        </aside>
+
+        <main class="editor">
+          <div id="mdToolBar" class="md-toolBar" style="display:none;">
+            <button id="mdBoldBtn" class="btn" type="button"><strong>B</strong></button>
+            <button id="mdItalicBtn" class="btn" type="button"><em>I</em></button>
+            <button id="mdH1Btn" class="btn" type="button">H</button>
+            <button id="mdBulletsBtn" class="btn" type="button">. List</button>
+            <button id="mdPreviewBtn" class="btn" type="button">Preview</button>
+          </div>
+          <div class="editorWrap">
+          <textarea id="editor" placeholder="first line becomes title..."></textarea>
+          <div id="preview" class="preview" style="display:none;"></div>
+          </div>
+
+          <div id="status" class="status"></div>
+        </main>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

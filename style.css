@@ -1,0 +1,549 @@
+body {
+  font-family: arial, sans-serif;
+  background: #f5f6f8;
+  margin: 0;
+  padding: 30px;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  margin-top: -10px;
+  color: #555;
+}
+
+.card {
+  background: white;
+  padding: 18px;
+  margin-top: 18px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  background: #2d6cdf;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+textarea {
+  width: 97%;
+  height: 140px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.hint {
+  color: #777;
+  font-size: 12px;
+  margin-top: 8px; 
+}
+
+.notes-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.note {
+  width: 100%;
+  min-height: 120px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  resize: vertical;
+  font: inherit;
+}
+
+.btn.small{
+  padding: 8px 10px;
+  margin-top: 10px;
+}
+
+.noteRow {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+#noteInput {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.note {
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.noteItem {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.noteText {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.btn.small {
+  padding: 8px 10px;
+}
+
+.btn.danger {
+  border: 1px solid #c33;
+}
+
+/* ===== Permanent Notes layout (left list + right editor) ===== */
+
+.card.app {
+  padding: 16px;
+}
+
+/* Make the notes section a 2-column layout */
+.card.app {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* Left column */
+.sidebar {
+  width: 260px;              /* adjust wider/narrower as you like */
+  border-right: 1px solid #e5e5e5;
+  padding-right: 12px;
+}
+
+.sidebar-top {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* Notes list box */
+#notesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+  max-height: 320px;          /* makes it a scrollable box */
+  overflow-y: auto;
+}
+
+/* Each note row */
+#notesList li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eeeeee;
+}
+
+#notesList li:last-child {
+  border-bottom: none;
+}
+
+/* Active / selected note */
+#notesList li.active {
+  background: #f2f6ff;
+}
+
+/* Title + preview inside each list item */
+.note-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.note-preview {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* Right column (editor) */
+.editor {
+  flex: 1;
+  min-width: 0;
+}
+
+#editor {
+  width: 95%;
+  height: 240px;
+  padding: 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+#status {
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ===== Layout polish ===== */
+
+.card.app {
+  display: flex;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.sidebar {
+  width: 280px;
+  padding-right: 14px;
+  border-right: 1px solid #e6e6e6;
+}
+
+.sidebar-top {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+#notesList {
+  max-height: 380px;
+}
+
+#notesList li {
+  transition: background 0.15s ease;
+}
+
+#notesList li:hover {
+  background: #f6f6f6;
+}
+
+#notesList li.active {
+  background: #eef3ff;
+}
+
+.editor {
+  flex: 1;
+  min-width: 0;
+}
+
+#editor {
+  height: 320px;
+}
+
+#status {
+  margin-top: 10px;
+}
+
+/* ===== Final visual polish ===== */
+
+.container {
+  max-width: 980px;
+}
+
+.card {
+  border-radius: 14px;
+}
+
+/* Notes panel: make it feel like the main product */
+.card.app {
+  display: flex;
+  gap: 18px;
+  align-items: stretch;
+  padding: 18px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+  padding-right: 16px;
+  border-right: 1px solid #e8e8e8;
+}
+
+.sidebar-top {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+/* Buttons: slightly softer */
+.btn {
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+/* Notes list */
+#notesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 420px;
+  overflow-y: auto;
+  background: #fff;
+}
+
+#notesList li {
+  padding: 10px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+#notesList li:last-child {
+  border-bottom: none;
+}
+
+#notesList li:hover {
+  background: #f7f7f7;
+}
+
+#notesList li.active {
+  background: #eef3ff;
+}
+
+.note-title {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.note-preview {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Editor */
+.editor {
+  flex: 1;
+  min-width: 0;
+}
+
+#editor {
+  width: 95%;
+  height: 360px;
+  padding: 14px;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  background: #fff;
+}
+
+#status {
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/*===== Markdown toolbar ===== */
+.md-toolbar{
+  display: flex;
+  align-items: right;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.md-toolbar .btn{
+  width: auto;        /* important */
+  padding: 8px 12px;  /* lets “• List” fit */
+}
+
+.editorWrap {
+  padding-top: 4px;
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.preview {
+  width: 95.5%;
+  min-height: 360px;          /* match your textarea height feel */
+  padding: 14px;
+  border: 2px solid #111;
+  border-radius: 10px;
+  background: #fff;
+  white-space: pre-wrap;
+  line-height: 1.45;
+}
+
+.preview h1 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+}
+
+.preview ul {
+  margin: 8px 0 8px 18px;
+}
+
+.status {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+.preview ul {
+  padding-left: 20px;
+  margin: 8px 0;
+}
+.preview li {
+  list-style: disc;
+  margin: 4px 0;
+}
+
+#preview {
+  padding: 12px;
+  font-family: inherit;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+#preview ul {
+  margin-left: 18px;
+}
+#preview li {
+  margin-bottom: 4px;
+}
+
+/* Button row layout */
+.button-row {
+  display: flex;
+  gap: 10px;         /* even spacing */
+  flex-wrap: wrap; /* allows it to wrap nicely if window is small*/
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Base button */
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #1f6feb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Red delete buttons */
+.btn.danger {
+  background: #d73a49;
+}
+
+.btn.danger:hover {
+  background: #b92534;
+}
+
+.btn {
+  padding: 8px 14px;
+  min-width: auto;
+  width: auto;
+  white-space: nowrap;
+}
+
+#mdToolBar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.btn {
+  margin: 0; /* remove any default margins that cause weird spacing*/
+}
+
+#notesList li {
+  font-size: 20rem;
+  font-weight: 900;
+  padding: 8px 6px;
+  line-height: 1.2;
+}
+
+#notesList li.active {
+  font-size: 2.3rem;
+  font-weight: 900;
+}
+
+/* Make editor + preview the exact same “box” */
+#editor,
+#preview {
+  width: 100%;
+  height: 420px;              /* pick the height you want */
+  box-sizing: border-box;
+  border: 2px solid #111;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 18px;
+  line-height: 1.4;
+  background: #fff;
+  overflow-y: scroll;         /* IMPORTANT: keeps scrollbar space identical */
+}
+
+/* Preview should wrap text like the textarea does */
+#preview {
+  white-space: pre-wrap;
+}
+
+/* Kill default margins that can “push” preview content */
+#preview h1,
+#preview p,
+#preview ul,
+#preview li {
+  margin: 0;
+  padding: 0;
+}
+#preview ul { margin-top: 8px; padding-left: 22px; }
+ 
+#notesList li {
+  font-size: 26px;
+  font-weight: 900;
+}
+
+#notesList li,
+#notesList li * {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.empty-state {
+  color: #777;
+  font-size: 0.95rem;
+  padding: 12px;
+  text-align: center;
+}
+
+/* hide empty state until JS decides to show it*/
+#emptyState { display: none; }
